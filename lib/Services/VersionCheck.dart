@@ -12,7 +12,8 @@ Future<void> checkForUpdates() async {
 }
 
 Future<Map<String, dynamic>> getLatestVersionFromGitHub() async {
-  final response = await http.get(Uri.parse(''));
+  final response = await http.get(Uri.parse(
+      'https://raw.githubusercontent.com/bilol-makhmudov/update_test_project/main/version.json'));
 
   if (response.statusCode == 200) {
     return json.decode(response.body);
